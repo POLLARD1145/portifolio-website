@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollard Samba | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1a73e8;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: #1a73e8;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Navbar */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Sections */
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        section h2 {
+            color: #1a73e8;
+            border-bottom: 3px solid #1a73e8;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #1a73e8;
+        }
+
+        /* Contact */
+        .contact ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #eee;
+            font-size: 0.9em;
+        }
+
+        /* Smooth section padding for nav */
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Pollard Samba</h1>
+        <p>Web Developer | Software Developer | AI & Machine Learning Enthusiast</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- About -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate and dedicated Web Developer, Software Developer, and AI/ML enthusiast. I enjoy solving
+                complex problems and building innovative solutions with modern technologies.</p>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills & Technologies</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Programming Languages</h3>
+                    <p>Python, JavaScript, C++, Java, C#</p>
+                </div>
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>React, Django, ASP.NET, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="card">
+                    <h3>Mobile Development</h3>
+                    <p>React Native, Expo</p>
+                </div>
+                <div class="card">
+                    <h3>Machine Learning & AI</h3>
+                    <p>TensorFlow, Scikit-learn, NLTK, Hugging Face</p>
+                </div>
+                <div class="card">
+                    <h3>Databases</h3>
+                    <p>MySQL, SQLite, MongoDB</p>
+                </div>
+                <div class="card">
+                    <h3>Tools & Version Control</h3>
+                    <p>Git, GitHub, VS Code, Jupyter Notebook, Docker, Android Studio, IntelliJ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects & Achievements</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>UniMatch System</h3>
+                    <p>University Recommendation System using Python, Django, and ML algorithms for personalized student
+                        recommendations.</p>
+                </div>
+                <div class="card">
+                    <h3>Open Source Contributions</h3>
+                    <p>Contributed to multiple web and mobile open-source projects, focusing on functionality and UX
+                        improvements.</p>
+                </div>
+                <div class="card">
+                    <h3>AI & ML Courses</h3>
+                    <p>Completed various programming courses in AI, Machine Learning, and Web Development to enhance
+                        technical expertise.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact">
+                <ul>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pollard-samba-81a583180"
+                            target="_blank">Pollard Samba</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:pollardsamba1@gmail.com">pollardsamba1@gmail.com</a>
+                    </li>
+                    <li><strong>WhatsApp:</strong> <a href="https://wa.me/260970106440" target="_blank">+260 970 106
+                            440</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Pollard Samba. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
