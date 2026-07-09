@@ -7,6 +7,7 @@
     <title>Pollard Samba | Portfolio</title>
     <meta name="description"
         content="Portfolio of Pollard Samba - Web Developer, Software Developer, and AI/ML Enthusiast">
+    <link rel="icon" type="image/png" href="PollardLogo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <style>
@@ -312,6 +313,117 @@
             font-size: 1rem;
         }
 
+        /* Timeline (Experience & Education) */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-cyan), var(--primary-purple));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 28px 30px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 30px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--primary-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .company {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .period {
+            font-size: 0.85rem;
+            color: var(--primary-cyan);
+            opacity: 0.8;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .timeline-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .cert-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 18px 22px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            border-color: rgba(178, 75, 243, 0.4);
+            box-shadow: 0 6px 20px rgba(178, 75, 243, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .cert-item::before {
+            content: '✦';
+            color: var(--primary-purple);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
         /* Contact Section */
         .contact ul {
             list-style: none;
@@ -452,15 +564,19 @@
 <body>
 
     <header>
+        <img src="PollardLogo.png" alt="Pollard Samba Logo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; position: relative; z-index: 1; border: 3px solid rgba(0, 212, 255, 0.4); box-shadow: 0 0 30px rgba(0, 212, 255, 0.3); animation: fadeInUp 0.8s ease-out;">
         <h1>Pollard Samba</h1>
-        <p>Web Developer | Software Developer | GitOps Engineer | AI & Machine Learning Enthusiast</p>
+        <p>Software Engineer | Web & Mobile Developer | GitOps Engineer | AI & ML Enthusiast</p>
+        <p style="font-size: 0.95rem; margin-top: 8px; color: rgba(184, 197, 214, 0.7); position: relative; z-index: 1;">📍 Lusaka, Zambia</p>
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -469,8 +585,7 @@
         <!-- About -->
         <section id="about">
             <h2>About Me</h2>
-            <p>I am a passionate and dedicated Web Developer, Software Developer, and AI/ML enthusiast. I enjoy solving
-                complex problems and building innovative solutions with modern technologies.</p>
+            <p>I'm a Software Engineer based in Lusaka, Zambia — adaptive, evolving, and always thinking. I build robust software systems spanning web, mobile, cloud infrastructure, and AI/ML. Currently working at SkyALITE Aviation Digital Systems, I thrive on solving complex problems and delivering innovative solutions with modern technologies.</p>
         </section>
 
         <!-- Skills -->
@@ -483,7 +598,7 @@
                 </div>
                 <div class="card">
                     <h3>Web Development</h3>
-                    <p>React, Django, ASP.NET, HTML, CSS, JavaScript</p>
+                    <p>React, Django, ASP.NET, Quarkus, HTML, CSS, JavaScript</p>
                 </div>
                 <div class="card">
                     <h3>Mobile Development</h3>
@@ -499,11 +614,48 @@
                 </div>
                 <div class="card">
                     <h3>DevOps & GitOps</h3>
-                    <p>Kubernetes, Docker, Argo CD, Terraform, Helm, DigitalOcean, CI/CD</p>
+                    <p>Kubernetes, Docker, Argo CD, Terraform, Helm, DigitalOcean, CI/CD, Software Infrastructure</p>
                 </div>
                 <div class="card">
                     <h3>Tools & Version Control</h3>
                     <p>Git, GitHub, VS Code, Jupyter Notebook, Android Studio, IntelliJ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Software Engineer</h3>
+                    <div class="company">SkyALITE Aviation Digital Systems LTD</div>
+                    <div class="period">September 2025 – Present · 11 months · Lusaka</div>
+                    <p>Building and maintaining digital aviation systems, contributing to software infrastructure and backend engineering.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Software Engineer</h3>
+                    <div class="company">Qualis Digital Finance</div>
+                    <div class="period">October 2025 – January 2026 · 4 months · Lusaka, Zambia</div>
+                    <p>Developed backend services and software features within a digital finance platform.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Associate Software Engineer</h3>
+                    <div class="company">Qualis Digital Finance</div>
+                    <div class="period">January 2026 – April 2026 · 4 months · Lusaka</div>
+                    <p>Contributed to product development and engineering initiatives across the digital finance stack.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Software Tester / Data Entry</h3>
+                    <div class="company">HELSB</div>
+                    <div class="period">November 2024 – December 2024 · 2 months · Lusaka</div>
+                    <p>Performed software testing and data entry operations to support quality assurance processes.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Information Technology Technician</h3>
+                    <div class="company">Marina Casino</div>
+                    <div class="period">March 2020 – December 2020 · 10 months</div>
+                    <p>Provided IT support, maintained hardware and software systems, and ensured operational continuity.</p>
                 </div>
             </div>
         </section>
@@ -527,6 +679,37 @@
                     <p>Completed various programming courses in AI, Machine Learning, and Web Development to enhance
                         technical expertise.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Bachelor of Science, Computer Science</h3>
+                    <div class="company">Copperbelt University</div>
+                    <div class="period">November 2021 – September 2025</div>
+                </div>
+                <div class="timeline-item">
+                    <h3>Certificate, Information Technology</h3>
+                    <div class="company">Alison</div>
+                    <div class="period">October 2019 – January 2020</div>
+                </div>
+                <div class="timeline-item">
+                    <h3>Senior Secondary O'levels, Pure Science</h3>
+                    <div class="company">Kalabo Secondary School</div>
+                    <div class="period">2016 – 2018</div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 60px;">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">Senior Secondary School O'levels Certificate</div>
+                <div class="cert-item">ICTAZ Associate Member</div>
+                <div class="cert-item">Customer Service Skills Certificate</div>
+                <div class="cert-item">Managing Health and Safety in Healthcare — Psychosocial Hazards Certificate</div>
+                <div class="cert-item">Certified to Practice as ICT Personnel</div>
             </div>
         </section>
 
