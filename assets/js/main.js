@@ -183,3 +183,56 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* ── 10. Footer year auto-update ────────────────────── */
 const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* ── 11. Hello World tooltip on language pills ──────── */
+(function () {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'hw-tooltip';
+    document.body.appendChild(tooltip);
+
+    let typeTimer = null;
+
+    function typeInto(text) {
+        tooltip.textContent = '';
+        let i = 0;
+        clearInterval(typeTimer);
+        typeTimer = setInterval(() => {
+            tooltip.textContent += text[i];
+            i++;
+            if (i >= text.length) clearInterval(typeTimer);
+        }, 28);
+    }
+
+    function position(pill) {
+        const rect  = pill.getBoundingClientRect();
+        const tw    = tooltip.offsetWidth;
+        const pad   = 10;
+
+        let left = rect.left + (rect.width / 2) - (tw / 2);
+        let top  = rect.top - tooltip.offsetHeight - 14;
+
+        left = Math.max(pad, Math.min(left, window.innerWidth - tw - pad));
+        if (top < 10) top = rect.bottom + 14;
+
+        tooltip.style.left = left + 'px';
+        tooltip.style.top  = top  + 'px';
+    }
+
+    document.querySelectorAll('[data-hello]').forEach(pill => {
+        pill.addEventListener('mouseenter', () => {
+            const raw = pill.getAttribute('data-hello')
+                            .replace(/&lt;/g, '<')
+                            .replace(/&gt;/g, '>');
+            typeInto(raw);
+            tooltip.classList.add('visible');
+            position(pill);
+        });
+
+        pill.addEventListener('mousemove', () => position(pill));
+
+        pill.addEventListener('mouseleave', () => {
+            clearInterval(typeTimer);
+            tooltip.classList.remove('visible');
+        });
+    });
+})();
